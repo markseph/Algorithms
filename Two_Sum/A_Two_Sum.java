@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 //	Given an array of integers nums and an integer target,
 //	return indices of the two numbers such that they add up to target.
 //	You may assume that each input would have exactly one solution,
@@ -18,16 +20,39 @@ public class A_Two_Sum {
 		System.out.println("Because nums[" + indices[0] + "] + nums[" + indices[1] + "] == " + target + ", we return [" + indices[0] + ", " + indices[1] + "].");
 	}
 	
+	//	time complexity: O(n)
+	//	space complexity: O(n)
 	public static int[] twoSum(int[] nums, int target) {
+		HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
 		int[] indices = new int[2];
-		for(int i = 0; i < nums.length - 1; i++) {
-			for(int j = i + 1; j < nums.length; j++) {
-				if(nums[i] + nums[j] == target) {
-					indices[0] = i;
-					indices[1] = j;
-				}
+		
+		for(int i = 0; i < nums.length; i++) {
+			map.put(nums[i], i);
+		}
+		for(int i = 0; i < nums.length; i++) {
+			int complement = target - nums[i];
+			if(map.containsKey(complement) && map.get(complement) != i) {
+				indices[0] = i;
+				indices[1] = map.get(complement);
+				return indices;
 			}
 		}
-		return indices;
+		throw new IllegalArgumentException("No solution.");
 	}
+	
+//	//	time complexity: O(n^2)
+//	//	space complexity: O(1)
+//	public static int[] twoSum(int[] nums, int target) {
+//		int[] indices = new int[2];
+//		for(int i = 0; i < nums.length - 1; i++) {
+//			for(int j = i + 1; j < nums.length; j++) {
+//				if(nums[i] + nums[j] == target) {
+//					indices[0] = i;
+//					indices[1] = j;
+//					return indices;
+//				}
+//			}
+//		}
+//		throw new IllegalArgumentException("No solution.");
+//	}
 }
