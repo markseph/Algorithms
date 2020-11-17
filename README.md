@@ -16,7 +16,7 @@ The following **required** functionality is completed:
 * [x] Contains Duplicate
 
 ### Medium
-* [ ] 
+* [x] Product of Array Except Self
 
 ### Hard
 * [ ] 
