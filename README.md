@@ -13,6 +13,7 @@ The following **required** functionality is completed:
 ### Easy
 * [x] Two Sum
 * [x] Best Time to Buy and Sell Stock
+* [x] Contains Duplicate
 
 ### Medium
 * [ ] 
