@@ -14,12 +14,16 @@ The following **required** functionality is completed:
 * [x] Two Sum
 * [x] Best Time to Buy and Sell Stock
 * [x] Contains Duplicate
+* [x] Valid Anagram
 
 ### Medium
 * [x] Product of Array Except Self
 
 ### Hard
 * [ ] 
+
+### Miscellaneous
+* [x] Estimate Pi
 
 ## Notes
 
